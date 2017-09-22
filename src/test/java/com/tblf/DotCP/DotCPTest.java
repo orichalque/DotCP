@@ -19,11 +19,11 @@ public class DotCPTest
 	
 	@Test
 	public void checkDOTCPParse() throws SAXException, IOException, ParserConfigurationException {
-		File file = new File(".classpath");
+		File file = new File("src/test/resources/.classpath");
 		if (file.exists()) {			
 			
 			List<File> jars = new DotCPParserBuilder().withM2Directory(DotCPUtils.getStandardMavenLocation()).create().parse(file);
-			Assert.assertEquals(2, jars.size());
+			Assert.assertEquals(22, jars.size());
 		}
 	}
 }

@@ -57,7 +57,6 @@ public class DotCPParser {
 					case "lib":
 						//jar in the local repository. Assume that .classpath is a the root of the project where the jars are 
 						File libJar = new File(dotCPFile.getAbsoluteFile().getParent()+"/"+element.getAttribute("path"));
-						
 						if (libJar.exists()) {
 							jars.add(libJar);
 						}
@@ -70,9 +69,9 @@ public class DotCPParser {
 						if (path.contains("M2_REPO")) {
 							path = path.replace("M2_REPO", m2repository.getAbsolutePath());
 						}
-						
+
 						File mvnJar = new File(path);
-						
+
 						if (mvnJar.exists()) {
 							jars.add(mvnJar);
 						}
