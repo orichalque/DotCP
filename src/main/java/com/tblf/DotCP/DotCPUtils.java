@@ -16,7 +16,8 @@ public class DotCPUtils {
 			//Windows
 			mvnRepoStr = String.format("%s%s%s", "C:\\Users\\", System.getProperty("user.name"),  "\\.m2\\repository");	
 		} else {
-			mvnRepoStr = "~/.m2/repository";
+			String home = System.getProperty("user.home");
+			mvnRepoStr = home+"/.m2/repository";
 		}
 		
 		return new File(mvnRepoStr);
